@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>🌱 Grow a Garden Shop</title>
+  <style>
+    :root {
+      --bg: #000;
+      --card-bg: #111;
+      --accent: #58f158;
+      --border: #333;
+      --text: #fff;
+      --button: #58f158;
+      --button-hover: #77ff77;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      color: var(--accent);
+      margin-bottom: 5px;
+      font-size: 2.5em;
+    }
+
+    .subtitle {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 1em;
+      color: #aaa;
+    }
+
+    .shop-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .item-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      text-align: center;
+    }
+
+    .item-card span {
+      display: block;
+      font-size: 1.1em;
+    }
+
+    .price {
+      color: var(--accent);
+      font-weight: bold;
+      font-size: 1.2em;
+    }
+
+    .username-input {
+      padding: 6px;
+      border-radius: 5px;
+      border: 1px solid #555;
+      font-size: 0.85em;
+      width: 100%;
+      margin-top: 4px;
+    }
+
+    .add-button {
+      margin-top: 6px;
+      padding: 6px 10px;
+      background: var(--button);
+      color: #000;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 0.9em;
+    }
+
+    .add-button:hover {
+      background: var(--button-hover);
+    }
+
+    .checkout {
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .checkout button {
+      padding: 12px 20px;
+      font-size: 1em;
+      background: #4752c4;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .checkout button:hover {
+      background: #6673e0;
+    }
+
+    .footer {
+      text-align: center;
+      color: #666;
+      font-size: 0.9em;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🌱 Grow a Garden Shop</h1>
+  <div class="subtitle">
+    Best Pets & Sheckels for Sale! <br />
+    <strong>All Prices Negotiable (doesn't always mean yes)</strong>
+  </div>
+
+  <div class="shop-grid">    <!-- 🐾 Pet Items -->
+    <div class="item-card">
+      <span>Butterfly (Any Age)</span>
+      <span class="price">$0.50</span>
+      <input class="username-input" placeholder="Your Roblox username">
+      <button class="add-button" onclick="addToCart('Butterfly', 0.50, this)">Add</button>
+    </div>
+
+    <div class="item-card">
+      <span>Raccoon (Any Age)</span>
+      <span class="price">$0.50</span>
+      <input class="username-input" placeholder="Your Roblox username">
+      <button class="add-button" onclick="addToCart('Raccoon', 0.50, this)">Add</button>
+    </div>
+
+    <div class="item-card">
+      <span>Fox (Any Age)</span>
+      <span class="price">$0.50</span>
+      <input class="username-input" placeholder="Your Roblox username">
+      <button class="add-button" onclick="addToCart('Fox', 0.50, this)">Add</button>
+    </div>
+
+    <div class="item-card">
+      <span>Dragonfly (Any Age)</span>
+      <span class="price">$1.00</span>
+      <input class="username-input" placeholder="Your Roblox username">
+      <button class="add-button" onclick="addToCart('Dragonfly', 1.00, this)">Add</button>
+    </div>
+
+    <div class="item-card">
+      <span>Zombie Chicken (Any Age)</span>
+      <span class="price">$1.50</span>
+      <input class="username-input" placeholder="Your Roblox username">
+      <button class="add-button" onclick="addToCart('Zombie Chicken', 1.50, this)">Add</button>
+    </div>
+
+    <div class="item-card">
+      <span>Disco Bee (Any Age)</span>
+      <span class="price">$2.00</span>
+      <input class="username-input" placeholder="Your Roblox username">
+      <button class="add-button" onclick="addToCart('Disco Bee', 2.00, this)">Add</button>
+    </div>
+
+    <div class="item-card">
+      <span>Kodamas (Normal/Corrupt)</span>
+      <span class="price">Ask</span>
+      <input class="username-input" placeholder="Your Roblox username">
+      <button class="add-button" onclick="addToCart('Kodamas', 0.00, this)">Add</button>
+    </div>
+
+    <div class="item-card">
+      <span>Custom Pet Order</span>
+      <span class="price">Message Me</span>
+      <input class="username-input" placeholder="Your Roblox username">
+      <button class="add-button" onclick="addToCart('Custom Pet Order', 0.00, this)">Add</button>
+    </div>
+
+    <!-- 💰 Sheckel Items -->
+    <div class="item-card">
+      <span>1T Sheckels</span>
+      <span class="price">$1.25</span>
+      <input class="username-input" placeholder="Your Roblox username">
+      <button class="add-button" onclick="addToCart('1T Sheckels', 1.25, this)">Add</button>
+    </div>
+
+    <div class="item-card">
+      <span>750T Sheckels</span>
+      <span class="price">$2.30</span>
+      <input class="username-input" placeholder="Your Roblox username">
+      <button class="add-button" onclick="addToCart('750T Sheckels', 2.30, this)">Add</button>
+    </div>
+
+    <div class="item-card">
+      <span>1QD Sheckels</span>
+      <span class="price">$3.50</span>
+      <input class="username-input" placeholder="Your Roblox username">
+      <button class="add-button" onclick="addToCart('1QD Sheckels', 3.50, this)">Add</button>
+    </div>
+
+    <div class="item-card">
+      <span>12QD Sheckels</span>
+      <span class="price">$10.50</span>
+      <input class="username-input" placeholder="Your Roblox username">
+      <button class="add-button" onclick="addToCart('12QD Sheckels', 10.50, this)">Add</button>
+    </div>
+
+    <div class="item-card">
+      <span>Custom Amounts (up to 50QD)</span>
+      <span class="price">Ask</span>
+      <input class="username-input" placeholder="Your Roblox username">
+      <button class="add-button" onclick="addToCart('Custom Sheckel Amount', 0.00, this)">Add</button>
+    </div>
+  </div> <!-- end shop-grid -->
+
+  <div class="checkout">
+    <button onclick="checkout()">Order Now</button>
+  </div>
+
+  <div class="footer">
+    After you order, message me on Discord:<br />
+    <strong>cheesemaximus</strong><br />
+    Or email/chat with your Roblox name so I can deliver your items.
+  </div> <script>
+  let cart = [];
+
+  function addToCart(item, price, button) {
+    const usernameInput = button.previousElementSibling;
+    const username = usernameInput.value.trim();
+
+    if (!username) {
+      alert("Please enter your Roblox username before adding to cart.");
+      return;
+    }
+
+    cart.push({ item, price, username });
+    alert(`${item} added to cart for ${username}`);
+  }
+
+  function checkout() {
+    if (cart.length === 0) {
+      alert("Your cart is empty.");
+      return;
+    }
+
+    let summary = "🛒 Your Order:\n\n";
+    cart.forEach((entry, i) => {
+      summary += `${i + 1}. ${entry.item} - $${entry.price.toFixed(2)} (User: ${entry.username})\n`;
+    });
+
+    summary += "\n✅ Please message me on Discord (cheesemaximus) to finish the trade!";
+    alert(summary);
+
+    // Reset cart
+    cart = [];
+  }
+</script>
